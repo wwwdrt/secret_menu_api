@@ -40,3 +40,47 @@
 # 🪲 Bugs
 
 > Here I share all the bugs I found along the way and their solutions 👇
+
+### ❌ ActiveModel::UnknownAttributeError: 
+
+Full error 👇
+
+```bash
+ActiveModel::UnknownAttributeError: unknown attribute 'menu_name' for SecretMenuItem
+```
+
+#### 💭 Why?
+- I forgot to add `*` in `cors.rb`
+- I put an additional `,` at the end of `seeds.rb` data
+- I was wrongly updating the migration
+
+#### ✅ How was the bug fixed?
+
+> JetBrains IDE is simply the best, it suggested me to install Rubocop linter 👇
+
+1. I installed Rubocop linter and checked every file for possible fixes, because the error pointed to line:9 in the 
+   `seeds.rb` but 
+   the 
+   problem was not there
+
+2. I wasn't sure if the changes I made where updated, had to find a way to be sure of that, used `rails 
+   db:migrate:redo`, this was the key to solve the problem after the changes made with the help of `Rubocop`
+
+3. To further validate that everything was working fine I queried the databased, first run `rails c`, then 
+   `SecretMenuItem.all` to `SELECT "secret_menu_items".* FROM "secret_menu_items"`, the data was successfully served,
+   I knew that it was working.
+4. The last test that would determine the success was to seed the data `rails db:seed RAILS_ENV=development` which 
+   was the command that triggered the error, but now it was all fixed.
+
+# ⚒️ Testing
+
+### 🔍 Index Action & Index Route
+
+### 🔍 Show Action & Show Route
+
+### 🔍 Create Action & Create Route
+
+### 🔍 Update Action & Update Route
+
+### 🔍 Destroy Action & Destroy Route
+
