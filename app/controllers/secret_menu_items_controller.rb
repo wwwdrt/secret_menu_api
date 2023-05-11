@@ -1,0 +1,2 @@
+class SecretMenuItemsController < ApplicationController
+end
