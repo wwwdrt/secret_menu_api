@@ -65,22 +65,42 @@ ActiveModel::UnknownAttributeError: unknown attribute 'menu_name' for SecretMenu
 
 2. I wasn't sure if the changes I made where updated, had to find a way to be sure of that, used `rails 
    db:migrate:redo`, this was the key to solve the problem after the changes made with the help of `Rubocop`
+   
+   ![image](https://github.com/wwwdrt/secret_menu_api/assets/100488248/5fdd4d50-7bcb-4baa-9dc4-03f9dc9e0151)
 
 3. To further validate that everything was working fine I queried the databased, first run `rails c`, then 
    `SecretMenuItem.all` to `SELECT "secret_menu_items".* FROM "secret_menu_items"`, the data was successfully served,
    I knew that it was working.
+   
+   ![image](https://github.com/wwwdrt/secret_menu_api/assets/100488248/e4602746-c0df-4a49-a28e-73701aa84175)
+   
 4. The last test that would determine the success was to seed the data `rails db:seed RAILS_ENV=development` which 
    was the command that triggered the error, but now it was all fixed.
-
+   
 # ⚒️ Testing
 
 ### 🔍 Index Action & Index Route
 
+![image](https://github.com/wwwdrt/secret_menu_api/assets/100488248/f1ac3187-da57-457f-b920-7966c039ed89)
+
 ### 🔍 Show Action & Show Route
+
+<img width="960" alt="image" src="https://github.com/wwwdrt/secret_menu_api/assets/100488248/fbc90e66-b3ce-4e98-ab09-fd924db69bfd">
 
 ### 🔍 Create Action & Create Route
 
+<img width="960" alt="image" src="https://github.com/wwwdrt/secret_menu_api/assets/100488248/45a5a20a-aec0-4d73-98d0-57a64ea0adc8">
+
+<img width="819" alt="image" src="https://github.com/wwwdrt/secret_menu_api/assets/100488248/bcba8134-9805-44c1-82a7-144d1416b13c">
+
 ### 🔍 Update Action & Update Route
+
+<img width="960" alt="image" src="https://github.com/wwwdrt/secret_menu_api/assets/100488248/2949b241-3174-41b3-ad79-a699a0188dff">
+
+<img width="956" alt="image" src="https://github.com/wwwdrt/secret_menu_api/assets/100488248/e919d613-d046-4041-85c9-16f6bcf4a2d7">
 
 ### 🔍 Destroy Action & Destroy Route
 
+<img width="960" alt="image" src="https://github.com/wwwdrt/secret_menu_api/assets/100488248/874b0ace-ac93-4955-a6bf-f4a3c8a2b809">
+
+<img width="960" alt="image" src="https://github.com/wwwdrt/secret_menu_api/assets/100488248/8f520398-7c5f-4767-81f0-dbd602b2c23e">
