@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SecretMenuItemsController < ApplicationController
   def index
     @secretMenuItems = SecretMenuItem.all
@@ -34,5 +36,4 @@ class SecretMenuItemsController < ApplicationController
     @secretMenuItem.destroy
     render json: @secretMenuItems
   end
-
 end
